@@ -1,0 +1,14 @@
+.socials-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.socials-wrap .icon-container {
+  padding: 0 10px;
+}
+
+.socials-wrap .icon-container .icon > a {
+  color: inherit;
+  text-decoration: none;
+}

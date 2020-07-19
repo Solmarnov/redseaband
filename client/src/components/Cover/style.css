@@ -21,7 +21,7 @@
 
 .cover-logo {
   position: absolute;
-  bottom: 0;
+  bottom: 5vh;
   z-index: 1;
 }
 
@@ -40,8 +40,8 @@
     background: url('./images/RedSea_2020_071.jpg') no-repeat center center/cover;
     background-size: cover; 
   }
-  
-  .cover-logo > img {
-    max-width: 20%;
+
+  .cover-logo {
+    bottom: 0;
   }
 }
