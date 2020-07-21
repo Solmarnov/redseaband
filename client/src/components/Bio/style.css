@@ -1,0 +1,13 @@
+.section-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-content {
+  max-width: 80ch;
+  padding: 10px;
+  font-size: 18px;
+}

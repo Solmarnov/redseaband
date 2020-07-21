@@ -12,3 +12,45 @@
   color: inherit;
   text-decoration: none;
 }
+
+.section-title {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Spotify & Facebook widgets */
+/* -------------------------  */
+
+.widgets {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.widget-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.widgets .widget {
+  margin: 20px;
+}
+
+.spotify-follow {
+  display: flex;
+  justify-content: center;
+}
+
+.widgets .widget iframe {
+  border: none;
+  overflow:hidden;
+  margin: 10px;
+}

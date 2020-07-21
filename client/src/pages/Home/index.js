@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '../../components/Menu';
 import Cover from '../../components/Cover';
 import Socials from '../../components/Socials';
+import Bio from '../../components/Bio';
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <Menu />
       <Cover />
       <Socials />
+      <Bio />
     </div>
   )
 }
