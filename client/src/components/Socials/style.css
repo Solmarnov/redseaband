@@ -5,7 +5,7 @@
 }
 
 .socials-wrap .icon-container {
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .socials-wrap .icon-container .icon > a {
@@ -24,33 +24,6 @@
   letter-spacing: 2px;
 }
 
-/* Spotify & Facebook widgets */
-/* -------------------------  */
-
-.widgets {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.widget-inner {
-  display: flex;
-  flex-direction: column;
-}
-
-.widgets .widget {
-  margin: 20px;
-}
-
-.spotify-follow {
-  display: flex;
-  justify-content: center;
-}
-
-.widgets .widget iframe {
-  border: none;
-  overflow:hidden;
-  margin: 10px;
+i.fab {
+  font-size: 40px;
 }

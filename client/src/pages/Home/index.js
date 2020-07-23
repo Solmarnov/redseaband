@@ -1,10 +1,11 @@
 import React from 'react';
-import PageWrapper from '../../components/PageWrapper';
-import Menu from '../../components/Menu';
-import Cover from '../../components/Cover';
-import Socials from '../../components/Socials';
-import Music from '../../components/Music';
 import Bio from '../../components/Bio';
+import Cover from '../../components/Cover';
+import HRule from '../../components/HRule';
+import Menu from '../../components/Menu';
+import Music from '../../components/Music';
+import PageWrapper from '../../components/PageWrapper';
+import Socials from '../../components/Socials';
 
 
 const Home = () => {
@@ -13,8 +14,11 @@ const Home = () => {
       <Menu />
       <Cover />
       <Socials />
-      <Music />
       <Bio />
+      <HRule />
+      <Music />
+      <HRule />
+      <Socials />
     </PageWrapper>
   )
 }
