@@ -1,7 +1,36 @@
 
 .streaming-service-toggler {
-  position: absolute;
   width: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.streaming-service-toggler button {
+  border: none;
+  height: 50px;
+  width: 150px;
+  background-color: #aaa;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.streaming-service-toggler button.active {
+  background-color: var(--sanguine);
+  color: #fff;
+}
+
+.coverart > img {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .coverart > img {
+    display: inline-block; 
+    width: 400px;
+    height: 400px;
+  }
 }

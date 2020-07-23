@@ -1,51 +1,62 @@
 import React, { useState } from 'react';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
-import { Row } from '../Grid';
-// import Iframe from '../Iframe';
+import { Container, Row } from '../Grid';
+import cover from '../../assets/images/BattlescarCover.jpg';
+import Iframe from '../Iframe';
+import HRule from '../HRule';
 import './style.css';
 
 const Music = () => {
 
-  const [streamingWidgets, setWidgets] = useState({
-    spotify: {
-      src: "https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq",
-      width: "300",
-      height: "380",
-      scrolling: "no",
-      frameborder: "0",
-      allowtransparency: "true"
-    },
-    appleMusic: {
-      src: "https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music",
-      width: "300",
-      height: "380",
-      sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation",
-      allow: "autoplay *; encrypted-media *;"
+  const spotifyIframe = {
+    src: "https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq",
+    scrolling: "no",
+    frameBorder: "0",
+    allowtransparency: "true"
+  };
+
+  const appleMusicIframe = {
+    src: "https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music",
+    sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
+    allow: "autoplay *; encrypted-media *;"
+  };
+
+  // Use state setting Spotify iframe as the default
+  const [streamingWidget, setStreamingWidget] = useState(spotifyIframe);
+  // Hook to toggle active class for streaming-service-toggler buttons
+  const [active, setActive] = useState(true);
+  // Function for onClick event
+  const toggleStreamingService = ({ target }) => {
+    const streamingService = target.getAttribute("name");
+    if (streamingService === "spotify") {
+      setStreamingWidget(spotifyIframe);
+      setActive(true);
+    } else {
+      setStreamingWidget(appleMusicIframe);
+      setActive(false);
     }
-  });
-
-  // const toggleStreamingService = e => {
-
-  // }
+  }
 
   return (
     <Section>
       <SectionTitle>MUSIC</SectionTitle>
       <div className="streaming-service-toggler">
-        <button>SPOTIFY</button>
-        <button>APPLE MUSIC</button>
+        <button className={active ? `active` : ``} name="spotify" onClick={toggleStreamingService}>SPOTIFY</button>
+        <button className={!active ? `active` : ``}name="apple-music" onClick={toggleStreamingService}>APPLE MUSIC</button>
       </div>
-      {/* <div className="streaming-service-toggler">
-        <label className="streaming-service-selector">
-          <input type="radio" name="streaming-service-provider" />
-          <span class="spotify">Spotify</span>
-        </label>
-        <label className="streaming-service-selector">
-          <input type="radio" name="streaming-service-provider" />
-          <span class="apple-music">Apple Music</span>
-        </label>
-      </div> */}
+      <Container>
+        <div className="music-streaming">
+          <div className="coverart">
+            <img src={cover} alt="Battlescar Cover" />
+            <Iframe { ...streamingWidget } 
+              width="300"
+              height="400"
+            />
+          </div>
+        </div>
+      </Container>
+      <HRule />
     </Section>
   )
 }
