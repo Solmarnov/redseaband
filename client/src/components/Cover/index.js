@@ -8,7 +8,7 @@ const Cover = () => {
     <Section className={"cover-wrapper"}>
       <div className="cover-img"></div>
       <div className="cover-logo">
-        <img src={logo} />
+        <img src={logo} alt="Red Sea logo" />
       </div>
     </Section>
   );

@@ -1,7 +1,8 @@
 import React from 'react';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
-import { Row } from '../Grid'
+import HRule from '../HRule';
+import { Row } from '../Grid';
 import './style.css';
 
 const Socials = () => {
@@ -10,44 +11,41 @@ const Socials = () => {
       <div className="socials-wrap">
         <div className="icon-container">
           <div className="icon">
-            <a href="https://open.spotify.com/artist/0uVZxGaRhRW3X3z05qrS1O?si=e5KroH5gTJiNBH9cS1DpSg" target="_blank">
+            <a href="https://open.spotify.com/artist/0uVZxGaRhRW3X3z05qrS1O?si=e5KroH5gTJiNBH9cS1DpSg" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-spotify fa-2x"></i>
             </a>
           </div>
         </div>
         <div className="icon-container">
           <div className="icon">
-            <a href="https://www.facebook.com/redseaprog/" target="_blank">
+            <a href="https://www.facebook.com/redseaprog/" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-facebook fa-2x"></i>
             </a>
           </div>
         </div>
         <div className="icon-container">
           <div className="icon">
-            <a href="https://www.youtube.com/channel/UCXLgcIfMePwItL3ciLLTOtg" target="_blank">
+            <a href="https://www.youtube.com/channel/UCXLgcIfMePwItL3ciLLTOtg" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-youtube fa-2x"></i>
             </a>
           </div>
         </div>
         <div className="icon-container">
           <div className="icon">
-            <a href="http://instagram.com/redsea_prog" target="_blank">
+            <a href="http://instagram.com/redsea_prog" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-instagram fa-2x"></i>
             </a>
           </div>
         </div>
         <div className="icon-container">
           <div className="icon">
-            <a href="https://itunes.apple.com/au/artist/red-sea/1148468925" target="_blank">
+            <a href="https://itunes.apple.com/au/artist/red-sea/1148468925" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-itunes-note fa-2x"></i>
             </a>
           </div>
         </div>
       </div>
-
-      <SectionTitle>
-        <h2>SOCIALS</h2>
-      </SectionTitle>
+      <SectionTitle>SOCIALS</SectionTitle>
       <Row>
         <div className="widgets">
           <div className="widget">
@@ -56,8 +54,13 @@ const Socials = () => {
                 <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:0uVZxGaRhRW3X3z05qrS1O&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
               </div>
               <div className="spotify-play">
-                <iframe src="https://open.spotify.com/embed/artist/0uVZxGaRhRW3X3z05qrS1O" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq" width="300" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
               </div>
+            </div>
+          </div>
+          <div className="widget">
+            <div className="widget-inner">
+              <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="400" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music"></iframe>
             </div>
           </div>
           <div className="widget">
@@ -67,6 +70,7 @@ const Socials = () => {
           </div>
         </div>
       </Row>
+      <HRule />
     </Section>
   )
 }

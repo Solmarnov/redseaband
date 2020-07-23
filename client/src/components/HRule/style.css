@@ -1,0 +1,18 @@
+.hrule-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  margin: 30px 0;
+}
+
+.hrule {
+  width: 60%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right, 
+    rgba(103, 15, 14, 0), 
+    var(--sanguine), 
+    rgba(103, 15, 14, 0)
+  );
+}
