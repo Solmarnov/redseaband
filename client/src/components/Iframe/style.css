@@ -1,4 +1,24 @@
-iframe {
+iframe.music {
   border: none;
   overflow: hidden;
 }
+
+iframe.video {
+  position: relative;
+  height: 180px;
+}
+
+@media screen and (min-width: 1024px) {
+  iframe.video {
+    width: 853px;
+    height: 505px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  iframe.video {
+    width: 960px;
+    height: 540px;
+  }
+}
+

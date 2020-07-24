@@ -20,6 +20,7 @@ const Music = () => {
 
   const spotifyPlayIframe = {
     title: "Battlescar EP by Red Sea on Spotify",
+    className: "music",
     src: "https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq",
     scrolling: "no",
     frameBorder: "0",
@@ -28,6 +29,7 @@ const Music = () => {
 
   const appleMusicIframe = {
     title: "Battlescar EP by Red Sea on Apple Music",
+    className: "music",
     src: "https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music",
     sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
     allow: "autoplay *; encrypted-media *;"
@@ -39,8 +41,8 @@ const Music = () => {
   const [active, setActive] = useState(true);
   // Function for onClick event
   const toggleStreamingService = ({ target }) => {
-    const streamingService = target.getAttribute("name");
-    if (streamingService === "spotify") {
+    const streamingService = target.getAttribute('name');
+    if (streamingService === 'spotify') {
       setStreamingWidget(spotifyPlayIframe);
       setActive(true);
     } else {

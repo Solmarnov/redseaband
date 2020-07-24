@@ -41,25 +41,21 @@ h2.video-title {
   transform: translate(-50%, -50%);
   z-index: 99;
   background: var(--menu-overlay-color);
-  width: 100%;
+  width: 100.5%;
   height: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   visibility: hidden;
   opacity: 0;
+  transition: all 0.4s ease;
 }
 
 /* Switch visibility to visible on click */
 .music-video.active {
   visibility: visible;
   opacity: 1;
-}
-
-.music-video iframe {
-  position: relative;
-  width: 560px;
-  height: 340px;
 }
 
 .close {
@@ -121,18 +117,22 @@ h2.video-title {
   h2.video-title {
     font-size: 32px;
   }
+
+  .music-video {
+    width: 100%;
+  }
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .music-video iframe {
     width: 853px;
     height: 505px;
   }
-}
+} */
 
-@media screen and (min-width: 1366px) {
+/* @media screen and (min-width: 1366px) {
   .music-video iframe {
     width: 960px;
     height: 540px;
   }
-}
+} */
