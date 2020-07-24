@@ -11,7 +11,7 @@ const Menu = () => {
           <div>
             <ul>
               <li><a href="#">BIO</a></li>
-              <li><a href="#">MUSIC</a></li>
+              <li><a href="/music">MUSIC</a></li>
               <li><a href="#">VIDEO</a></li>
               <li><a href="#">TOUR</a></li>
             </ul>

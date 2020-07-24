@@ -22,6 +22,11 @@
   color: #fff;
 }
 
+.music-streaming {
+  display: flex;
+  justify-content: center;
+}
+
 .coverart > img {
   display: none;
 }

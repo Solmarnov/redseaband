@@ -68,7 +68,7 @@ const Music = () => {
             />
           </div>
         </div>
-        <InternalLink href="">
+        <InternalLink href="/music">
           ALL MUSIC
         </InternalLink>
       </Container>
