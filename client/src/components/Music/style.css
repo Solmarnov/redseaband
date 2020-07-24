@@ -1,4 +1,3 @@
-
 .streaming-service-toggler {
   width: 100%;
   height: 100px;
@@ -25,44 +24,6 @@
 
 .coverart > img {
   display: none;
-}
-
-.internal-link {
-  padding-top: 30px;
-}
-
-ul.internal-link-ul {
-  list-style-type: none;
-}
-
-li.internal-link-li {
-  display: inline-block;
-  padding: 0 15px;
-}
-
-a.internal-link-a {
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--sanguine);
-}
-
-a.internal-link-a::after {
-  content: '';
-  display: block;
-  position: relative;
-  bottom: 5px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--sanguine);
-  opacity: 0;
-  transition: all .3s ease;
-}
-
-a.internal-link-a:hover::after {
-  opacity: 1;
-  bottom: 3px;
-  transition: all .3s ease;
 }
 
 @media screen and (min-width: 600px) {

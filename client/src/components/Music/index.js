@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Container } from '../Grid';
+import Iframe from '../Iframe';
+import InternalLink from '../InternalLink';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
-import { Container, Row } from '../Grid';
 import cover from '../../assets/images/BattlescarCover.jpg';
-import Iframe from '../Iframe';
 import './style.css';
 
 const Music = () => {
@@ -18,6 +19,7 @@ const Music = () => {
   // }
 
   const spotifyPlayIframe = {
+    title: "Battlescar EP by Red Sea on Spotify",
     src: "https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq",
     scrolling: "no",
     frameBorder: "0",
@@ -25,6 +27,7 @@ const Music = () => {
   };
 
   const appleMusicIframe = {
+    title: "Battlescar EP by Red Sea on Apple Music",
     src: "https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music",
     sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
     allow: "autoplay *; encrypted-media *;"
@@ -63,13 +66,9 @@ const Music = () => {
             />
           </div>
         </div>
-        <div className="internal-link">
-          <ul className="internal-link-ul">
-            <li className="internal-link-li">
-              <a href="" className="internal-link-a">ALL MUSIC</a>
-            </li>
-          </ul>
-        </div>
+        <InternalLink href="">
+          ALL MUSIC
+        </InternalLink>
       </Container>
     </Section>
   )

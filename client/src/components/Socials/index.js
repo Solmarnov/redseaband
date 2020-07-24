@@ -1,8 +1,5 @@
 import React from 'react';
 import Section from '../Section';
-import SectionTitle from '../SectionTitle';
-import HRule from '../HRule';
-import { Row } from '../Grid';
 import './style.css';
 
 const Socials = () => {

@@ -6,6 +6,7 @@ import Menu from '../../components/Menu';
 import Music from '../../components/Music';
 import PageWrapper from '../../components/PageWrapper';
 import Socials from '../../components/Socials';
+import Video from '../../components/Video';
 
 
 const Home = () => {
@@ -17,6 +18,8 @@ const Home = () => {
       <Bio />
       <HRule />
       <Music />
+      <HRule />
+      <Video />
       <HRule />
       <Socials />
     </PageWrapper>
