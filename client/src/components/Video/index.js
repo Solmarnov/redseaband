@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Iframe from '../Iframe';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
@@ -8,18 +8,22 @@ import secondaryVideoBackdrop from '../../assets/images/TheScoreBackdropSecondar
 import './style.css';
 
 const Video = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState();
+  const [primary] = useState("primary-video");
+  const [secondary] = useState("secondary-video");
   const [isPrimaryVideo, setIsPrimaryVideo] = useState();
   const [styleForBody, setStyleForBody] = useState({});
 
+
+
   const handleVideoOverlay = ({ target }) => {
+    videoToggler(target);
     if (!active) {
       setStyleForBody({
         position: 'fixed',
         top: `-${window.scrollY}px`
       });
       setActive(true);
-      videoToggler(target);
     } else {
       setStyleForBody({ ...styleForBody, position: '' });
       setActive(false);
@@ -53,21 +57,21 @@ const Video = () => {
       <SectionTitle>VIDEO</SectionTitle>
 
       <Row>
-        <div className="video-wrapper">
+        <div className="video-wrapper" onClick={handleVideoOverlay}>
           <div className="video-banner">
             <img src={primaryVideoBackdrop} alt="The Score official lyric video banner" />
           </div>
-          <div className="toggle-music-video" name="primary-video" onClick={handleVideoOverlay}>
-            <h2 className="video-title">THE SCORE (OFFICIAL LYRIC VIDEO)</h2>
+          <div className="toggle-music-video" name={primary}>
+            <h2 className="video-title" name={primary}>THE SCORE (OFFICIAL LYRIC VIDEO)</h2>
           </div>
         </div>
         
-        <div className="video-wrapper">
+        <div className="video-wrapper" onClick={handleVideoOverlay}>
           <div className="video-banner">
             <img src={secondaryVideoBackdrop} alt="The Score official lyric video banner" />
           </div>
-          <div className="toggle-music-video" name="secondary-video" onClick={handleVideoOverlay}>
-            <h2 className="video-title">THE ART OF TRANSCENDING</h2>
+          <div className="toggle-music-video" name={secondary}>
+            <h2 className="video-title" name={secondary}>THE ART OF TRANSCENDING</h2>
           </div>
         </div>
       </Row>
