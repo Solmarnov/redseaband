@@ -1,0 +1,21 @@
+header {
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  background-color: var(--sanguine);
+  color: var(--backdropWhite);
+}
+
+header .logo {
+  position: relative;
+}
+
+header .logo img {
+  position: absolute;
+  top: -25px;
+  width: 50px;
+  clip-path: inset(0px 0px 32px 5px);
+}
