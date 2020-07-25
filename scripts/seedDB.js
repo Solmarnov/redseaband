@@ -3,8 +3,10 @@ const db = require('../models');
 
 // This file empties the Music collection and inserts the music below
 
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/redseaband'
+  process.env.MONGODB_URI || 'mongodb://localhost/redseaband',
+  { useNewUrlParser: true }
 );
 
 const musicSeed = [
@@ -20,8 +22,8 @@ const musicSeed = [
 ]
 
 db.Music
-.remove({})
-.then(() => db.Book.collection.insertMany(musicSeed))
+.deleteMany({})
+.then(() => db.Music.collection.insertMany(musicSeed))
 .then(data => {
   console.log(data.result.n + " records inserted.");
   process.exit(0);
