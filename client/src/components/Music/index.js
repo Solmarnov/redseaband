@@ -4,6 +4,7 @@ import Iframe from '../Iframe';
 import InternalLink from '../InternalLink';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
+import StreamingToggler from '../StreamingToggler';
 import cover from '../../assets/images/BattlescarCover.jpg';
 import './style.css';
 
@@ -19,7 +20,7 @@ const Music = () => {
   // }
 
   const spotifyPlayIframe = {
-    title: "Battlescar EP by Red Sea on Spotify",
+    title: "Battlescar (2016)",
     className: "music",
     src: "https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq",
     scrolling: "no",
@@ -28,7 +29,7 @@ const Music = () => {
   };
 
   const appleMusicIframe = {
-    title: "Battlescar EP by Red Sea on Apple Music",
+    title: "Battlescar (2016)",
     className: "music",
     src: "https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music",
     sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
@@ -54,10 +55,10 @@ const Music = () => {
   return (
     <Section>
       <SectionTitle>MUSIC</SectionTitle>
-      <div className="streaming-service-toggler">
-        <button className={active ? `active` : ``} name="spotify" onClick={toggleStreamingService}>SPOTIFY</button>
-        <button className={!active ? `active` : ``}name="apple-music" onClick={toggleStreamingService}>APPLE MUSIC</button>
-      </div>
+      <StreamingToggler 
+        active={active}
+        toggleStreamingService={toggleStreamingService}
+      />
       <Container>
         <div className="music-streaming">
           <div className="coverart">
@@ -67,6 +68,9 @@ const Music = () => {
               height="400"
             />
           </div>
+        </div>
+        <div className="music-title">
+          <h2 className="title">BATTLESCAR (2016)</h2>
         </div>
         <InternalLink href="/music">
           ALL MUSIC
