@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
+import AdminContent from '../../components/AdminContent';
 import AdminHeader from '../../components/AdminHeader';
+import AdminLeftPane from '../../components/AdminLeftPane';
+import AdminMenu from '../../components/AdminMenu';
+import AdminWrapper from '../../components/AdminWrapper';
 import PageWrapper from '../../components/PageWrapper';
 import './style.css';
 
@@ -36,6 +40,12 @@ const Admin = () => {
   return (
     <PageWrapper>
       <AdminHeader />
+      <AdminWrapper>
+        <AdminLeftPane>
+          <AdminMenu />
+        </AdminLeftPane>
+        <AdminContent></AdminContent>
+      </AdminWrapper>
     </PageWrapper>
   )
 
