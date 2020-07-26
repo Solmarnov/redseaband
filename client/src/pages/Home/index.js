@@ -12,7 +12,9 @@ import Video from '../../components/Video';
 const Home = () => {
   return (
     <PageWrapper>
-      <Menu />
+      <Menu 
+        musicLink="/music"
+      />
       <Cover />
       <Socials />
       <Bio />

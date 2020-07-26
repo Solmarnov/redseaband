@@ -10,13 +10,14 @@ const AdminHeader = () => {
       </div>
       <ul className="nav">
         <li>
-          Red Sea Admin
-          <i class="fa fa-chevron-down"></i>
+          <a href="#">
+            Red Sea Admin
+            <i class="fa fa-chevron-down"></i>
+          </a>
           <ul>
-            <li><a class="logout">Logout</a></li>
+            <li><a href="/logout">Logout</a></li>
           </ul>
         </li>
-        
       </ul>
     </header>
   )
