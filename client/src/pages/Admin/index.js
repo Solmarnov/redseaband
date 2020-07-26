@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
+import AdminBtnGroup from '../../components/AdminBtnGroup';
 import AdminContent from '../../components/AdminContent';
 import AdminHeader from '../../components/AdminHeader';
 import AdminLeftPane from '../../components/AdminLeftPane';
@@ -44,7 +45,9 @@ const Admin = () => {
         <AdminLeftPane>
           <AdminMenu />
         </AdminLeftPane>
-        <AdminContent></AdminContent>
+        <AdminContent>
+          <AdminBtnGroup />
+        </AdminContent>
       </AdminWrapper>
     </PageWrapper>
   )

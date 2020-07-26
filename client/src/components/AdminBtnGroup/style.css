@@ -1,0 +1,28 @@
+.admin-btn-group {
+  display: flex;
+  font-size: 1.2em;
+  padding: 7px 16px 7px;
+  border-bottom: 1px solid #333;
+}
+
+.admin-btn-group > a.admin-btn {
+  margin: 0 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #aaa;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #333;
+  transition: .2s ease;
+}
+
+.admin-btn-group > a.admin-btn:hover {
+  background: var(--sanguine);
+  color: var(--backdropWhite);
+  border-color: var(--sanguine);
+  transition: .2s ease;
+}
+
+.admin-btn-group > a.admin-btn i {
+  padding-left: 10px;
+}
