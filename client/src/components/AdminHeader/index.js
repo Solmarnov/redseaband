@@ -12,7 +12,7 @@ const AdminHeader = () => {
         <li>
           <a href="#">
             Red Sea Admin
-            <i class="fa fa-chevron-down"></i>
+            <i className="fa fa-chevron-down"></i>
           </a>
           <ul>
             <li><a href="/logout">Logout</a></li>

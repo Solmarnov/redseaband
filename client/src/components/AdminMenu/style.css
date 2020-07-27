@@ -1,11 +1,28 @@
-ul.admin-left-pane-menu > li > a {
-  /* font-family: Arial, Helvetica, sans-serif; */
+.admin-left-pane-menu-wrapper {
+  margin: 10px;
+  border: 1px solid var(--sanguine);
+  border-radius: 5px;
+}
+
+.admin-left-pane-menu-wrapper > .admin-left-pane-menu-title {
+  background: var(--sanguine);
+  padding: 10px;
+  color: var(--backdropWhite);
   font-size: 1.2em;
+  font-weight: 400;
+}
+
+ul.admin-left-pane-menu {
+  list-style: none;
+}
+
+ul.admin-left-pane-menu > li > a {
+  font-size: 1.1em;
   display: block;
-  padding: 16px 0 16px 20px;
+  padding: 10px 0 10px 20px;
   text-decoration: none;
   color: #0c0c0c;
-  border-bottom: 1px solid var(--sanguine);
+  border-top: 1px solid var(--sanguine);
   transition: .2s ease;
 }
 

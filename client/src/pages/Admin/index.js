@@ -41,6 +41,8 @@ const Admin = () => {
     e.preventDefault();
   };
 
+  console.log(music);
+
   return (
     <PageWrapper>
       <AdminHeader />

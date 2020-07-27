@@ -4,10 +4,12 @@ import './style.css';
 const AdminTableHead = props => {
   return (
     <thead className="admin-table-head">
-      <th>#</th>
-      <th>Title</th>
-      <th>Type</th>
-      <th></th>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Type</th>
+        <th></th>
+      </tr>
     </thead>
   )
 }

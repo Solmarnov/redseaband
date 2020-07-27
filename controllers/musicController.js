@@ -3,6 +3,7 @@ const db = require('../models');
 // Methods for the musicController
 module.exports = {
   findAll: function(req, res) {
+    console.log(req.query);
     db.Music
     .find(req.query)
     .then(dbModel => res.json(dbModel))
