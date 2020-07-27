@@ -1,0 +1,10 @@
+thead.admin-table-head {
+  background: #333;
+  color: var(--backdropWhite);
+}
+
+thead.admin-table-head > th {
+  padding: 6px;
+  font-size: 1.1em;
+  font-weight: 400;
+}

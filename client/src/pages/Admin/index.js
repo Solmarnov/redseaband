@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
 import AdminBtnGroup from '../../components/AdminBtnGroup';
 import AdminContent from '../../components/AdminContent';
+import AdminContentTitle from '../../components/AdminContentTitle';
 import AdminHeader from '../../components/AdminHeader';
 import AdminLeftPane from '../../components/AdminLeftPane';
 import AdminMenu from '../../components/AdminMenu';
+import AdminTable from '../../components/AdminTable';
+import AdminTableHead from '../../components/AdminTableHead';
 import AdminWrapper from '../../components/AdminWrapper';
 import PageWrapper from '../../components/PageWrapper';
 import './style.css';
@@ -47,6 +50,10 @@ const Admin = () => {
         </AdminLeftPane>
         <AdminContent>
           <AdminBtnGroup />
+          <AdminContentTitle />
+          <AdminTable>
+            <AdminTableHead />
+          </AdminTable>
         </AdminContent>
       </AdminWrapper>
     </PageWrapper>
