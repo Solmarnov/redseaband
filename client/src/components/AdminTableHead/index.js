@@ -8,7 +8,7 @@ const AdminTableHead = props => {
         <th id="row">#</th>
         <th id="title">Title</th>
         <th id="type">Type</th>
-        <th id="edit"></th>
+        <th id="edit">Edit</th>
       </tr>
     </thead>
   )

@@ -1,6 +1,6 @@
 .admin-btn-group {
   display: flex;
-  font-size: 1em;
+  font-size: 1.1em;
   padding: 7px 16px 7px;
   border-bottom: 1px solid #333;
 }
@@ -11,7 +11,7 @@
   border: 2px solid var(--sanguine);
   border-radius: 5px;
   background: white;
-  padding: 10px 20px;
+  padding: 5px 20px;
   text-decoration: none;
   color: var(--sanguine);
   font-weight: 600;

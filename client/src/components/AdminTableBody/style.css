@@ -18,3 +18,8 @@ tbody.admin-table-body > tr > td {
   font-weight: 400;
   border-right: 1px solid var(--backdropWhite);
 }
+
+tbody.admin-table-body > tr > td > a {
+  text-decoration: none;
+  color: inherit;
+}
