@@ -7,6 +7,7 @@ import AdminHeader from '../../components/AdminHeader';
 import AdminLeftPane from '../../components/AdminLeftPane';
 import AdminMenu from '../../components/AdminMenu';
 import AdminTable from '../../components/AdminTable';
+import AdminTableBody from '../../components/AdminTableBody';
 import AdminTableHead from '../../components/AdminTableHead';
 import AdminWrapper from '../../components/AdminWrapper';
 import PageWrapper from '../../components/PageWrapper';
@@ -55,6 +56,7 @@ const Admin = () => {
           <AdminContentTitle />
           <AdminTable>
             <AdminTableHead />
+            <AdminTableBody music={music} />
           </AdminTable>
         </AdminContent>
       </AdminWrapper>
