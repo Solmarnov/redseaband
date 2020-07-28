@@ -9,7 +9,9 @@ const musicSchema = new Schema({
     appleMusic: { type: String}
   },
   img: { data: Buffer, contentType: String },
-  releaseYear: { type: String },
+  releaseYear: { type: String }
+}, {
+  // Options:
   timestamps: true
 });
 
