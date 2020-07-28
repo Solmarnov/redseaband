@@ -1,0 +1,98 @@
+form.manage-music {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 40px 20px;
+  background: whitesmoke;
+}
+
+form > .form-title {
+  padding-left: 20px;
+  color: var(--sanguine);
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+form > .input-group {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  font-size: 1em;
+}
+
+form > .input-group > label {
+  font-weight: 600;
+  padding-left: 10px;
+  color: #333;
+}
+
+form > .input-group > input {
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+form > .input-group > small {
+  padding-left: 10px;
+  color: #333;
+}
+
+form > .input-group > small > code {
+  font-size: 1.2em;
+  color: var(--sanguine);
+}
+
+form > .button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 10px;
+}
+
+form > .button-group > button {
+  min-width: 120px;
+  margin: 0px 15px;
+  border: 2px solid var(--sanguine);
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+  color: var(--sanguine);
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+form > .button-group > button:hover {
+  background: var(--sanguine);
+  color: white;
+  transition: .2s ease;
+}
+
+form > .button-group > button.cancel {
+  border: 2px solid #333;
+  background: #ddd;
+  color: #333;
+  transition: .2s ease;
+}
+
+form > .button-group > button.cancel:hover {
+  background: #333;
+  color: white;
+  transition: .2s ease;
+}
+
+form > .button-group > button > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width: 600px) {
+  form.manage-music {
+    width: 50%;
+  }
+}
