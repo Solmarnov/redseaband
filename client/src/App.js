@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Admin from './pages/Admin';
 import Home from './pages/Home';
+import ManageMusic from './pages/AdminManageMusic';
 import Music from './pages/Music';
 
 // For more than one route paths
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route exact path="/admin">
           <Admin />
+        </Route>
+        <Route exact path={["/admin/manage-music", "/admin/manage-music/:id"]}>
+          <ManageMusic />
         </Route>
       </Switch>
     </Router>

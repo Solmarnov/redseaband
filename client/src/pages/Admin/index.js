@@ -30,18 +30,6 @@ const Admin = () => {
     `));
   };
 
-  // Handles updating component state when user types into the input field
-  const handleInputChange = ({ target }) => {
-    const { name, value } = target;
-    setFormObject({ ...formObject, [name]: value })
-  };
-
-  // When the form is submitted, use the API.saveMusic method to save music data
-  // Then reload books from the database
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-  };
-
   console.log(music);
 
   return (
@@ -62,8 +50,6 @@ const Admin = () => {
       </AdminWrapper>
     </PageWrapper>
   )
-
-
 }
 
 export default Admin;
