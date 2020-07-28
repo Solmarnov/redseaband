@@ -7,10 +7,10 @@ const AdminTableBody = ({ music }) => {
       {music.map((obj, i) => {
         return (
           <tr>
-            <td>{i + 1}</td>
-            <td>{obj.title}</td>
-            <td>{obj.type}</td>
-            <td key={obj._id}><a href=""><i class="far fa-edit"></i></a></td>
+            <td id="row">{i + 1}</td>
+            <td id="title">{obj.title}</td>
+            <td id="type">{obj.type}</td>
+            <td id="edit" key={obj._id}><a href=""><i class="far fa-edit"></i></a></td>
           </tr>)
       })}
     </tbody>
