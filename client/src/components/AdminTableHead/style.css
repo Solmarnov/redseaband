@@ -3,8 +3,20 @@ thead.admin-table-head {
   color: var(--backdropWhite);
 }
 
-thead.admin-table-head > th {
-  padding: 6px;
-  font-size: 1.1em;
+thead.admin-table-head > tr > #row,
+thead.admin-table-head > tr > #edit {
+  text-align: center;
+  width: 100px;
+}
+
+thead.admin-table-head > tr > #title,
+thead.admin-table-head > tr > #type {
+  text-align: left;
+}
+
+thead.admin-table-head > tr > th {
+  padding: 2px 10px;
+  font-size: 1em;
   font-weight: 400;
+  border-right: 1px solid var(--backdropWhite);
 }

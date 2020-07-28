@@ -1,0 +1,20 @@
+tbody > tr > td {
+  border-bottom: 1px solid #333;
+}
+
+tbody.admin-table-body > tr > #row,
+tbody.admin-table-body > tr > #edit {
+  text-align: center;
+}
+
+tbody.admin-table-body > tr > #title,
+tbody.admin-table-body > tr > #type {
+  text-align: left;
+}
+
+tbody.admin-table-body > tr > td {
+  padding: 2px 10px;
+  font-size: 1em;
+  font-weight: 400;
+  border-right: 1px solid var(--backdropWhite);
+}
