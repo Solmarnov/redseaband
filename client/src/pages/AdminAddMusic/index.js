@@ -25,7 +25,19 @@ const AdminManageMusic = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(formObject);
-    API.saveMusic(formObject)
+    API.saveMusic({
+      title: formObject.title,
+      type: formObject['release-type'],
+      src: {
+        spotify: formObject['spotify-url'],
+        appleMusic: formObject['apple-music-url']
+      },
+      img: {
+        data: formObject['cover-art'],
+        contentType: formObject['cover-art'].type
+      },
+      releaseYear: formObject['release-year']
+    })
     .then(res => setFormObject({}))
     .catch(err => console.log(err));
   };

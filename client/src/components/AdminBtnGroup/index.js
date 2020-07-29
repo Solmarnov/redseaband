@@ -5,7 +5,7 @@ const AdminBtnGroup = props => {
 
   return (
     <div className="admin-btn-group">
-      <a href="/admin/manage-music" className="admin-btn">
+      <a href="/admin/add-music" className="admin-btn">
         Add Music
         <i className="fas fa-plus"></i>
       </a>
