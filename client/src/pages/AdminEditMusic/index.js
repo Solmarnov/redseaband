@@ -8,10 +8,8 @@ import PageWrapper from '../../components/PageWrapper';
 import './style.css';
 
 const AdminManageMusic = () => {
-  const [musicEntry, setMusicEntry] = useState({})
-  const [formObject, setFormObject] = useState({})
-
   const { id } = useParams()
+  const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
     loadMusicEntry(id)
@@ -20,20 +18,19 @@ const AdminManageMusic = () => {
   const loadMusicEntry = id => {
     API.getMusic(id)
     .then(res => {
-      setMusicEntry(res.data)
-      return musicEntry;
-    })
-    .then(musicEntry => {
-      console.log(musicEntry);
+      console.log(res.data);
       setFormObject({
-        title: musicEntry.title,
-        'release-type': musicEntry.type,
-        'release-year': musicEntry.releaseYear,
-        'spotify-url': musicEntry.src.spotify,
-        'apple-music-url': musicEntry.src.appleMusic
+        title: res.data.title,
+        'release-type': res.data.type,
+        'release-year': res.data.releaseYear,
+        'spotify-url': res.data.src.spotify,
+        'apple-music-url': res.data.src.appleMusic
       })
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(`
+      AdminEditMusic loadMusicEntry encountered an error:
+      ${err}
+    `));
   };
 
   // Handles updating component state when user types into the input field
