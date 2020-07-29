@@ -23,13 +23,16 @@ const AdminManageMusic = () => {
       setMusicEntry(res.data)
       return musicEntry;
     })
-    .then(musicEntry => setFormObject({
-      title: musicEntry.title,
-      'release-type': musicEntry.type,
-      'release-year': musicEntry.releaseYear,
-      'spotify-url': musicEntry.src.spotify,
-      'apple-music-url': musicEntry.src.appleMusic
-    }))
+    .then(musicEntry => {
+      console.log(musicEntry);
+      setFormObject({
+        title: musicEntry.title,
+        'release-type': musicEntry.type,
+        'release-year': musicEntry.releaseYear,
+        'spotify-url': musicEntry.src.spotify,
+        'apple-music-url': musicEntry.src.appleMusic
+      })
+    })
     .catch(err => console.log(err));
   };
 
