@@ -9,12 +9,12 @@ import './style.css';
 
 const AdminManageMusic = () => {
   const { id } = useParams()
-  const [musicEntry, setMusicEntry] = useState({})
+  const [musicEntry, setMusicEntry] = useState([])
   const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
     loadMusicEntry(id)
-  }, {})
+  }, [])
 
   const loadMusicEntry = id => {
     API.getMusicById(id)
