@@ -8,6 +8,7 @@ router.route('/')
 
 // Matches with '/api/music/:id'
 router.route('/:id')
+.get(musicController.findById)
 .put(musicController.update);
 
 module.exports = router;
