@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from '../Section';
 import './style.css';
-import logo from './images/RED SEA FINAL_new_white.png';
+import logo from '../../assets/images/RED SEA FINAL_new_white.png';
 
 const Cover = () => {
   return (

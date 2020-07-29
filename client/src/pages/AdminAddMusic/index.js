@@ -33,8 +33,8 @@ const AdminManageMusic = () => {
         appleMusic: formObject['apple-music-url']
       },
       img: {
-        data: formObject['cover-art'],
-        contentType: formObject['cover-art'].type
+        data: formObject.fileObj,
+        contentType: formObject.fileObj.type
       },
       releaseYear: formObject['release-year']
     })
