@@ -10,9 +10,27 @@ const AdminManageMusic = () => {
   const [musicEntry, setMusicEntry] = useState({})
   const [formObject, setFormObject] = useState({})
 
+  const { id } = useParams()
+
   useEffect(() => {
-    
+    loadMusicEntry(id)
   }, {})
+
+  const loadMusicEntry = id => {
+    API.getMusic(id)
+    .then(res => {
+      setMusicEntry(res.data)
+      return musicEntry;
+    })
+    .then(musicEntry => setFormObject({
+      title: musicEntry.title,
+      'release-type': musicEntry.type,
+      'release-year': musicEntry.releaseYear,
+      'spotify-url': musicEntry.src.spotify,
+      'apple-music-url': musicEntry.src.appleMusic
+    }))
+    .catch(err => console.log(err));
+  };
 
   // Handles updating component state when user types into the input field
   const handleInputChange = ({ target }) => {
@@ -51,11 +69,17 @@ const AdminManageMusic = () => {
             <h2 className="form-title">Add Music</h2>
             <div className="input-group">
               <label htmlFor="title">Title</label>
-              <input type="text" name="title" id="title" onChange={handleInputChange} required />
+              <input type="text" name="title" id="title" 
+                value={formObject.title}
+                onChange={handleInputChange} required 
+              />
             </div>
             <div className="input-group">
               <label htmlFor="release-type">Release type</label>
-              <input list="release-types" type="text" name="release-type" id="release-type" onChange={handleInputChange} required />
+              <input list="release-types" type="text" name="release-type" id="release-type" 
+                value={formObject['release-type']}
+                onChange={handleInputChange} required 
+              />
               <datalist id="release-types">
                 <option value="EP" />
                 <option value="LP" />
@@ -64,11 +88,17 @@ const AdminManageMusic = () => {
             </div>
             <div className="input-group">
               <label htmlFor="release-year">Release year</label>
-              <input type="text" name="release-year" id="release-year" onChange={handleInputChange} required />
+              <input type="text" name="release-year" id="release-year" 
+                value={formObject['release-year']}
+                onChange={handleInputChange} required 
+              />
             </div>
             <div className="input-group">
               <label htmlFor="spotify-url">Spotify embed code source</label>
-              <input type="text" name="spotify-url" id="spotify-url" onChange={handleInputChange} />
+              <input type="text" name="spotify-url" id="spotify-url" 
+                value={formObject['spotify-url']}
+                onChange={handleInputChange} 
+              />
               <small>
                 Provide the source path to the release on Spotify by copying the embed code. E.g. <code>https://open.spotify.com/embed/album/...</code> <br />
                 Follow this <a href="https://open.spotify.com/artist/0uVZxGaRhRW3X3z05qrS1O?si=rallHcqLQay397cmpxFj2w" target="_blank">link</a> to view Red Sea artist page on Spotify.
@@ -76,7 +106,10 @@ const AdminManageMusic = () => {
             </div>
             <div className="input-group">
               <label htmlFor="apple-music-url">Apple Music embed code source</label>
-              <input type="text" name="apple-music-url" id="apple-music-url" onChange={handleInputChange} />
+              <input type="text" name="apple-music-url" id="apple-music-url" 
+                value={formObject['apple-music-url']}
+                onChange={handleInputChange} 
+              />
               <small>
                 Provide the source path to the release on Apple Music by copying the embed code. E.g. <code>https://embed.music.apple.com/au/album/...</code> <br />
                 Follow this <a href="https://music.apple.com/au/artist/red-sea/1148468925" target="_blank">link</a> to view Red Sea artist page on Apple Music.
