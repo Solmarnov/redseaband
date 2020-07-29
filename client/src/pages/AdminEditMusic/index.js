@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import API from '../../utils/API';
 import { Container } from '../../components/Grid';
 import AdminHeader from '../../components/AdminHeader';
