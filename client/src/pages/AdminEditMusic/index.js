@@ -9,6 +9,7 @@ import './style.css';
 
 const AdminManageMusic = () => {
   const { id } = useParams()
+  const [musicEntry, setMusicEntry] = useState({})
   const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
@@ -17,21 +18,27 @@ const AdminManageMusic = () => {
 
   const loadMusicEntry = id => {
     API.getMusicById(id)
-    .then(res => {
-      console.log(res.data);
-      setFormObject({
-        title: res.data.title,
-        'release-type': res.data.type,
-        'release-year': res.data.releaseYear,
-        'spotify-url': res.data.src.spotify,
-        'apple-music-url': res.data.src.appleMusic
-      })
-    })
+    .then(res => setMusicEntry(res.data))
+    // .then(res => {
+    //   console.log(res.data);
+    //   setFormObject({
+    //     title: res.data.title,
+    //     'release-type': res.data.type,
+    //     'release-year': res.data.releaseYear,
+    //     'spotify-url': res.data.src.spotify,
+    //     'apple-music-url': res.data.src.appleMusic
+    //   })
+    // })
     .catch(err => console.log(`
       AdminEditMusic loadMusicEntry encountered an error:
       ${err}
     `));
   };
+
+  console.log(`
+    Music entry: 
+    ${musicEntry}
+  `);
 
   // Handles updating component state when user types into the input field
   const handleInputChange = ({ target }) => {
