@@ -32,10 +32,10 @@ const AdminManageMusic = () => {
         spotify: formObject['spotify-url'],
         appleMusic: formObject['apple-music-url']
       },
-      img: {
-        data: formObject.fileObj,
-        contentType: formObject.fileObj.type
-      },
+      // img: {
+      //   data: formObject.fileObj,
+      //   contentType: formObject.fileObj.type
+      // },
       releaseYear: formObject['release-year']
     })
     .then(res => setFormObject({}))
