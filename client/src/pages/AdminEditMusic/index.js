@@ -16,7 +16,7 @@ const AdminManageMusic = () => {
   }, {})
 
   const loadMusicEntry = id => {
-    API.getMusic(id)
+    API.getMusicById(id)
     .then(res => {
       console.log(res.data);
       setFormObject({
@@ -49,7 +49,7 @@ const AdminManageMusic = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(formObject);
-    API.saveMusic(formObject)
+    API.updateMusic(formObject, id)
     .then(res => setFormObject({}))
     .catch(err => console.log(err));
   };

@@ -2,15 +2,19 @@ import axios from 'axios';
 
 export default {
   // Gets all music
-  getMusic: function(id) {
-    return !id ? axios.get('api/music') : axios.get('api/music/' + id);
-    // if (!id) {
-    //   return axios.get('/api/music');
-    // } else {
-    //   return axios.get('api/music/' + id);
-    // }
+  getMusic: function() {
+    return axios.get('/api/music');
   },
-  saveMusic: function(musicData, id) {
-    return !id ? axios.post('/api/music', musicData) : axios.post('api/music/' + id, musicData);
+  // Gets an instance of music by id
+  getMusicById: function(id) {
+    return axios.get('api/music/' + id);
   },
+  // Save new music instance
+  saveMusic: function(musicData) {
+    return axios.post('/api/music', musicData);
+  },
+  // Update existing music instance
+  updateMusic: function(musicData, id) {
+    return axios.post('api/music/' + id, musicData);
+  }
 };
