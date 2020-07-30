@@ -15,16 +15,19 @@ const AdminManageMusic = () => {
     setFormObject({ ...formObject, [name]: value })
   };
 
-  const handleFileSelection = ({ target }) => {
-    console.log(target.files[0]);
-    setFormObject({ ...formObject, fileObj: target.files[0]} );
-  }
+  // const handleFileSelection = ({ target }) => {
+  //   console.log(target.files[0]);
+  //   setFormObject({ ...formObject, fileObj: target.files[0]} );
+  // }
 
   // When the form is submitted, use the API.saveMusic method to save music data
   // Then reload books from the database
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    const { target } = e;
+    target.setAttribute('disabled', true);
     console.log(formObject);
+    console.log(e.target);
     API.saveMusic({
       title: formObject.title,
       type: formObject['release-type'],
@@ -38,7 +41,9 @@ const AdminManageMusic = () => {
       // },
       releaseYear: formObject['release-year']
     })
-    .then(res => setFormObject({}))
+    .then(res => {
+      window.location.replace('/admin');
+    })
     .catch(err => console.log(err));
   };
 
@@ -89,10 +94,10 @@ const AdminManageMusic = () => {
                 Follow this <a href="https://music.apple.com/au/artist/red-sea/1148468925" target="_blank">link</a> to view Red Sea artist page on Apple Music.
               </small>
             </div>
-            <div className="input-group">
+            {/* <div className="input-group">
               <label htmlFor="cover-art">Cover art</label>
               <input type="file" name="cover-art" id="cover-art" onChange={handleFileSelection} required />
-            </div>
+            </div> */}
             <div className="button-group">
               <button className="cancel"><a href="/admin">Cancel</a></button>
               <button type="submit" className="save" onClick={handleFormSubmit}>Save</button>
