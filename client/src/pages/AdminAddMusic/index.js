@@ -26,8 +26,6 @@ const AdminManageMusic = () => {
     e.preventDefault();
     const { target } = e;
     target.setAttribute('disabled', true);
-    console.log(formObject);
-    console.log(e.target);
     API.saveMusic({
       title: formObject.title,
       type: formObject['release-type'],

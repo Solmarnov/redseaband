@@ -35,10 +35,10 @@ const AdminManageMusic = () => {
     `));
   };
 
-  console.log(`
-    Music entry: 
-    ${musicEntry}
-  `);
+  // console.log(`
+  //   Music entry: 
+  //   ${musicEntry}
+  // `);
 
   // Handles updating component state when user types into the input field
   const handleInputChange = ({ target }) => {
@@ -55,9 +55,24 @@ const AdminManageMusic = () => {
   // Then reload books from the database
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formObject);
-    API.updateMusic(formObject, id)
-    .then(res => setFormObject({}))
+    const { target } = e;
+    target.setAttribute('disabled', true);
+    API.updateMusic({
+      title: formObject.title,
+      type: formObject['release-type'],
+      src: {
+        spotify: formObject['spotify-url'],
+        appleMusic: formObject['apple-music-url']
+      },
+      // img: {
+      //   data: formObject.fileObj,
+      //   contentType: formObject.fileObj.type
+      // },
+      releaseYear: formObject['release-year']
+    }, id)
+    .then(res => {
+      window.location.replace('/admin');
+    })
     .catch(err => console.log(err));
   };
 
