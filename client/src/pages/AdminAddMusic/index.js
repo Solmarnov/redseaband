@@ -21,7 +21,7 @@ const AdminManageMusic = () => {
   // }
 
   // When the form is submitted, use the API.saveMusic method to save music data
-  // Then reload books from the database
+  // Then return to dashboard
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const { target } = e;

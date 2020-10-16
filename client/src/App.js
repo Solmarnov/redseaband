@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Admin from './pages/Admin';
+// import Admin from './pages/Admin';
+// import AddMusic from './pages/AdminAddMusic';
+// import EditMusic from './pages/AdminEditMusic';
 import Home from './pages/Home';
-import AddMusic from './pages/AdminAddMusic';
-import EditMusic from './pages/AdminEditMusic';
 import Music from './pages/Music';
+require('dotenv').config();
 
 // For more than one route paths
 // <Route exact path={["/", "/home"]}></Route>
@@ -19,7 +20,7 @@ function App() {
         <Route exact path="/music">
           <Music />
         </Route>
-        <Route exact path="/admin">
+        {/* <Route exact path="/admin">
           <Admin />
         </Route>
         <Route exact path="/admin/add-music">
@@ -27,7 +28,7 @@ function App() {
         </Route>
         <Route exact path="/admin/edit-music/:id">
           <EditMusic />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );

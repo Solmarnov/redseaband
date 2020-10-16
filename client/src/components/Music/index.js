@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import spotifyAPI from '../../utils/spotifyAPI';
 import { Container } from '../Grid';
 import Iframe from '../Iframe';
 import InternalLink from '../InternalLink';
@@ -19,6 +20,10 @@ const Music = () => {
   //   allowtransparency: "true"
   // }
 
+  useEffect(() => {
+    getSpotifyMusic()
+  }, [])
+
   const spotifyPlayIframe = {
     title: "Battlescar (2016)",
     className: "music",
@@ -35,6 +40,17 @@ const Music = () => {
     sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
     allow: "autoplay *; encrypted-media *;"
   };
+
+  const getSpotifyMusic = () => {
+    spotifyAPI.getToken()
+    .then(res => console.log(res))
+    // spotifyAPI.getArtist()
+    // .then(res => console.log(res))
+    .catch(err => console.log(`
+      components/Music/index.js getSpotifyMusic encountered error:
+      ${err}`))
+  }
+
 
   // Use state setting Spotify iframe as the default
   const [streamingWidget, setStreamingWidget] = useState(spotifyPlayIframe);
