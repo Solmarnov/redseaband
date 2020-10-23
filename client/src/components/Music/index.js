@@ -1,5 +1,7 @@
+// !!Apply CSS .active to show/hide spotify/appleMusic Iframe
+
 import React, { useState, useEffect } from 'react';
-import spotifyAPI from '../../utils/spotifyAPI';
+// import spotifyAPI from '../../utils/spotifyAPI';
 import { Container } from '../Grid';
 import Iframe from '../Iframe';
 import InternalLink from '../InternalLink';
@@ -20,9 +22,9 @@ const Music = () => {
   //   allowtransparency: "true"
   // }
 
-  useEffect(() => {
-    getSpotifyMusic()
-  }, [])
+  // useEffect(() => {
+  //   getSpotifyMusic()
+  // }, [])
 
   const spotifyPlayIframe = {
     title: "Battlescar (2016)",
@@ -41,36 +43,38 @@ const Music = () => {
     allow: "autoplay *; encrypted-media *;"
   };
 
-  const getSpotifyMusic = () => {
-    spotifyAPI.getToken()
-    .then(res => console.log(res))
-    // spotifyAPI.getArtist()
-    // .then(res => console.log(res))
-    .catch(err => console.log(`
-      components/Music/index.js getSpotifyMusic encountered error:
-      ${err}`))
-  }
-
-
   // Use state setting Spotify iframe as the default
-  const [streamingWidget, setStreamingWidget] = useState(spotifyPlayIframe);
   // Hook to toggle active class for streaming-service-toggler buttons
   const [active, setActive] = useState(true);
+  const [spotify] = useState("spotify");
+  const [appleMusic] = useState("apple-music");
+  const [isSpotify, setIsSpotify] = useState(true);
+
   // Function for onClick event
   const toggleStreamingService = ({ target }) => {
-    const streamingService = target.getAttribute('name');
-    if (streamingService === 'spotify') {
-      setStreamingWidget(spotifyPlayIframe);
+    const name = target.getAttribute('name');
+    if (name === 'spotify') {
+      setIsSpotify(true);
       setActive(true);
     } else {
-      setStreamingWidget(appleMusicIframe);
-      setActive(false);
+      setIsSpotify(false);
+      setActive(false)
     }
   }
 
   return (
     <Section>
       <SectionTitle>MUSIC</SectionTitle>
+      <div className="spotify-follow">
+        <Iframe
+          src="https://open.spotify.com/follow/1/?uri=spotify:artist:0uVZxGaRhRW3X3z05qrS1O&size=detail&theme=light"
+          scrolling="no"
+          frameBorder="0"
+          allowtransparency="true"
+          width="210"
+          height="56"
+        />
+      </div>
       <StreamingToggler 
         active={active}
         toggleStreamingService={toggleStreamingService}
@@ -79,7 +83,24 @@ const Music = () => {
         <div className="music-streaming">
           <div className="coverart">
             <img src={cover} alt="Battlescar Cover" />
-            <Iframe { ...streamingWidget } 
+            <Iframe 
+              title="Battlescar (2016)"
+              className={`music ${isSpotify ? "active" : ""}`}
+              name={spotify}
+              src="https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq"
+              scrolling="no"
+              frameBorder="0"
+              allowtransparency="true"
+              width="300"
+              height="400"
+            />
+            <Iframe
+              title="Battlescar (2016)"
+              className={`music ${!isSpotify ? "active" : ""}`}
+              name={appleMusic}
+              src="https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              allow="autoplay *; encrypted-media *;"
               width="300"
               height="400"
             />
