@@ -8,7 +8,7 @@ import InternalLink from '../InternalLink';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
 import StreamingToggler from '../StreamingToggler';
-import cover from '../../assets/images/BattlescarCover.jpg';
+import cover from '../../assets/images/Sanguine_Cover_720px.jpg';
 import './style.css';
 
 const Music = () => {
@@ -27,20 +27,24 @@ const Music = () => {
   // }, [])
 
   const spotifyPlayIframe = {
-    title: "Battlescar (2016)",
+    title: "Sanguine (2020)",
     className: "music",
-    src: "https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq",
+    src: "https://open.spotify.com/embed/album/4ZkaqIBPpLQJIgttfMz02U",
     scrolling: "no",
     frameBorder: "0",
-    allowtransparency: "true"
+    allowtransparency: "true",
+    width: "300",
+    height: "400"
   };
 
   const appleMusicIframe = {
-    title: "Battlescar (2016)",
+    title: "Sanguine (2020)",
     className: "music",
-    src: "https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music",
+    src: "https://embed.music.apple.com/au/album/sanguine-ep/1529538886",
     sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
-    allow: "autoplay *; encrypted-media *;"
+    allow: "autoplay *; encrypted-media *;",
+    width: "300",
+    height: "400"
   };
 
   // Use state setting Spotify iframe as the default
@@ -82,27 +86,27 @@ const Music = () => {
       <Container>
         <div className="music-streaming">
           <div className="coverart">
-            <img src={cover} alt="Battlescar Cover" />
+            <img src={cover} alt="Sanguine Cover" />
             <Iframe 
-              title="Battlescar (2016)"
               className={`music ${isSpotify ? "active" : ""}`}
               name={spotify}
-              src="https://open.spotify.com/embed/album/1Y8AhtmqSLi1DvwNPj3SZq"
-              scrolling="no"
-              frameBorder="0"
-              allowtransparency="true"
-              width="300"
-              height="400"
+              title={spotifyPlayIframe.title}
+              src={spotifyPlayIframe.src}
+              scrolling={spotifyPlayIframe.scrolling}
+              frameBorder={spotifyPlayIframe.frameBorder}
+              allowtransparency={spotifyPlayIframe.allowtransparency}
+              width={spotifyPlayIframe.width}
+              height={spotifyPlayIframe.height}
             />
             <Iframe
-              title="Battlescar (2016)"
               className={`music ${!isSpotify ? "active" : ""}`}
               name={appleMusic}
-              src="https://embed.music.apple.com/au/album/battlescar-ep/1148468921?app=music"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-              allow="autoplay *; encrypted-media *;"
-              width="300"
-              height="400"
+              title={appleMusicIframe.title}
+              src={appleMusicIframe.src}
+              sandbox={appleMusicIframe.sandbox}
+              allow={appleMusicIframe.allow}
+              width={appleMusicIframe.width}
+              height={appleMusicIframe.height}
             />
           </div>
         </div>
