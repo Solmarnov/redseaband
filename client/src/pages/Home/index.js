@@ -1,4 +1,5 @@
 import React from 'react';
+import Announcement from '../../components/Announcement';
 import Bio from '../../components/Bio';
 import Cover from '../../components/Cover';
 import HRule from '../../components/HRule';
@@ -12,6 +13,7 @@ import Video from '../../components/Video';
 const Home = () => {
   return (
     <PageWrapper>
+      <Announcement />
       <Menu 
         musicLink="/music"
       />

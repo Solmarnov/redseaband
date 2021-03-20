@@ -1,0 +1,25 @@
+.announcement {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: black;
+  padding: 6px 0;
+  color: whitesmoke;
+  z-index: 1000;
+}
+
+.announcement .announcement-content {
+  text-align: center;
+}
+
+.announcement .announcement-content a {
+  text-decoration: none;
+  border-bottom: 1px solid whitesmoke;
+  color: white;
+  font-weight: 500;
+}
+
+.announcement .announcement-content a:hover {
+  font-weight: 600;
+}

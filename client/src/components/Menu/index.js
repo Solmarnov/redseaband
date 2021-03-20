@@ -5,7 +5,9 @@ const Menu = () => {
   return (
     <div className="menu-wrap">
       <input type="checkbox" className="toggler" />
-      <div className="hamburger"><div></div></div>
+      <div className="hamburger">
+        <div></div>
+      </div>
       <div className="menu">
         <div>
           <div>
